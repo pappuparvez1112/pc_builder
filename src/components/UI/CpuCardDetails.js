@@ -1,11 +1,8 @@
-import { addToCart } from "@/redux/features/cart/cartSlice";
-import { ArrowRightOutlined } from "@ant-design/icons";
-import { Button, Card, Col, Row } from "antd";
+import { Card, Col, Row } from "antd";
 import Image from "next/image";
-import Link from "next/link";
 import { useDispatch } from "react-redux";
 
-const HomeCard = ({ allProduct }) => {
+const CpuCardDetails = ({ cpuDetails }) => {
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +16,7 @@ const HomeCard = ({ allProduct }) => {
           lg: 32,
         }}
       >
-        {allProduct?.map((product) => (
+        {cpuDetails?.map((product) => (
           <Col key={product.id} className="" span={6}>
             <Card
               hoverable
@@ -56,20 +53,9 @@ const HomeCard = ({ allProduct }) => {
               <h3>Price:{product?.price}</h3>
               <h3>Status: {product?.status}</h3>
               <h3>Rating : {product?.rating}</h3>
+              <h3>Description:{product?.description}</h3>
 
               <p style={{ fontSize: "15px" }}></p>
-
-              <Button className="me-12">
-                Details <ArrowRightOutlined />
-              </Button>
-              <Link href="/pcbuilder">
-                <Button
-                  onClick={() => dispatch(addToCart(product))}
-                  className="btn btn-primary"
-                >
-                  Add
-                </Button>
-              </Link>
 
               {/* </Link> */}
             </Card>
@@ -79,4 +65,4 @@ const HomeCard = ({ allProduct }) => {
     </>
   );
 };
-export default HomeCard;
+export default CpuCardDetails;

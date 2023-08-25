@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 
-const HomeCard = ({ allProduct }) => {
+const StorageDeviceCard = ({ storageDeviceProducts }) => {
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +19,7 @@ const HomeCard = ({ allProduct }) => {
           lg: 32,
         }}
       >
-        {allProduct?.map((product) => (
+        {storageDeviceProducts?.map((product) => (
           <Col key={product.id} className="" span={6}>
             <Card
               hoverable
@@ -79,4 +79,4 @@ const HomeCard = ({ allProduct }) => {
     </>
   );
 };
-export default HomeCard;
+export default StorageDeviceCard;

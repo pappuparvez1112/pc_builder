@@ -2,7 +2,7 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import HomeCard from "@/components/UI/HomeCard";
 import Head from "next/head";
 
-const HomePage = () => {
+const HomePage = ({ allProduct }) => {
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ const HomePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomeCard></HomeCard>
+      <HomeCard allProduct={allProduct}></HomeCard>
     </>
   );
 };
@@ -24,4 +24,16 @@ export default HomePage;
 
 HomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
+};
+
+export const getServerSideProps = async () => {
+  const res = await fetch("http://localhost:3000/api/product");
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      allProduct: data.data,
+    },
+    // revalidate: 10,
+  };
 };

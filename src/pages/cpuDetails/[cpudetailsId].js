@@ -1,7 +1,7 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import CpuCardDetails from "@/components/UI/CpuCardDetails";
 
-const CpuPages = ({ cpuDetail }) => {
+const CpuDetailsPages = ({ cpuDetail }) => {
   const cpuDetails = cpuDetail?.filter((product) => product.category === "Cpu");
   return (
     <>
@@ -11,8 +11,8 @@ const CpuPages = ({ cpuDetail }) => {
   );
 };
 
-export default CpuPages;
-CpuPages.getLayout = function getLayout(page) {
+export default CpuDetailsPages;
+CpuDetailsPages.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
@@ -36,7 +36,9 @@ CpuPages.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async (context) => {
   const { params } = context;
-  const res = await fetch(`http://localhost:5000/products/${params.cpuId}`);
+  const res = await fetch(
+    `http://localhost:5000/products/${params.cpudetailsId}`
+  );
   const data = await res.json();
   return {
     props: {

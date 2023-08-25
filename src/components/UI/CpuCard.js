@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 
-const HomeCard = ({ allProduct }) => {
+const CpuCard = ({ cpuProducts }) => {
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +19,7 @@ const HomeCard = ({ allProduct }) => {
           lg: 32,
         }}
       >
-        {allProduct?.map((product) => (
+        {cpuProducts?.map((product) => (
           <Col key={product.id} className="" span={6}>
             <Card
               hoverable
@@ -59,9 +59,11 @@ const HomeCard = ({ allProduct }) => {
 
               <p style={{ fontSize: "15px" }}></p>
 
-              <Button className="me-12">
-                Details <ArrowRightOutlined />
-              </Button>
+              <Link href={`/cpuDetails/${product?.id}`}>
+                <Button className="me-12">
+                  Details <ArrowRightOutlined />
+                </Button>
+              </Link>
               <Link href="/pcbuilder">
                 <Button
                   onClick={() => dispatch(addToCart(product))}
@@ -79,4 +81,4 @@ const HomeCard = ({ allProduct }) => {
     </>
   );
 };
-export default HomeCard;
+export default CpuCard;

@@ -11,50 +11,19 @@ import {
 
 import { Button, Layout, Menu } from "antd";
 import Link from "next/link";
-import { useState } from "react";
+import Category from "../UI/Category";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const RootLayout = ({ children }) => {
-  const [isActive, setActive] = useState("hello");
+  // const [items, setItems] = useState();
+  // console.log(items);
 
-  const sidebarOptions = [
-    {
-      name: "CPU / Processor",
-      href: "/cpu",
-      current: isActive === "cpu" ? true : false,
-    },
-    {
-      name: "Motherboard",
-      href: "/motherboard",
-      current: isActive === "motherboard" ? true : false,
-    },
-    {
-      name: "RAM",
-      href: "/ram",
-      current: isActive === "ram" ? true : false,
-    },
-    {
-      name: "Power Supply Unit",
-      href: "/powersupply",
-      current: isActive === "ant" ? true : false,
-    },
-    {
-      name: "Storage Device",
-      href: "/storageDevice",
-      current: isActive === "ant" ? true : false,
-    },
-    {
-      name: "Monitor",
-      href: "/monitor",
-      current: isActive === "ant" ? true : false,
-    },
-    {
-      name: "Mouse",
-      href: "/mouse",
-      current: isActive === "ant" ? true : false,
-    },
-  ];
+  // const filterItems = (name) => {
+  //   const newItems = allProduct?.filter((data) => data.category === name);
+  //   setItems(newItems);
+  // };
+  // console.log(filterItems, "filter");
   return (
     <Layout>
       <Header className="flex justify-center items-center ">
@@ -86,7 +55,7 @@ const RootLayout = ({ children }) => {
               Contact Us
             </items>
           </Link>
-          <Link href="/Pcbuilder">
+          <Link href="/pcbuilder">
             <Button className="hover:bg-slate-300  bg-gray-500">
               Build your Pc
             </Button>
@@ -95,53 +64,8 @@ const RootLayout = ({ children }) => {
       </Header>
 
       <div className=" grid grid-cols-7">
-        <div className=" bg-white">
-          <div>
-            <p className="text-2xl font-bold bg-yellow-500">Catagories</p>
-          </div>
-          <nav className=" border border-black-300">
-            <ul className=" bg-slate-400 bg-transparent  ">
-              {sidebarOptions.map((option) => (
-                <li
-                  className="border-solid border-2 border-gray-500 hover:bg-slate-700"
-                  key={option.name}
-                >
-                  <Link
-                    href={option.href}
-                    className={
-                      (option.current
-                        ? "bg-green-700 text-white"
-                        : "text-gray hover:text-white hover:bg-orange-700",
-                      "group flex gap-x-3 rounded-md p-1 text-sm leading-6 font-semibold ")
-                    }
-                    onClick={(e) => setActive(option.name)}
-                  >
-                    {/* <option.icon className="text-gray-300 group-hover:text-white h-6 w-6 shrink-0" /> */}
-                    {option.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-        {/* <Menu className="">
-          <p className="mb-6 text-base bg-yellow-500">Catagories</p>
-          <div className="">
-            <Link href="/hello">
-              <p className="mb-5">CPU</p>
-            </Link>
-            <Link href="/hello">
-              <p className="mb-5">RAM</p>
-            </Link>
-            <Link href="/hello">
-              <p className="mb-5">MONITOR</p>
-            </Link>
-            <Link href="/hello">
-              <p className="mb-5">KEYBOARD</p>
-            </Link>
-          </div>
+        <Category></Category>
 
-        </Menu> */}
         <Content
           className="col-span-6"
           style={{
@@ -186,3 +110,15 @@ const RootLayout = ({ children }) => {
   );
 };
 export default RootLayout;
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:5000/products");
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      allProduct: data.data,
+    },
+    // revalidate: 10,
+  };
+};

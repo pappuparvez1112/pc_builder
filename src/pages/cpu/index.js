@@ -1,76 +1,16 @@
-import CpuImage from "@/assets/images/images.jpg";
 import RootLayout from "@/components/Layouts/RootLayout";
-import { ArrowRightOutlined } from "@ant-design/icons";
-import { Card, Col, Row } from "antd";
-import Image from "next/image";
+import CpuCard from "@/components/UI/CpuCard";
 
-const CpuPages = () => {
+const CpuPages = ({ cpudata }) => {
+  const cpuProducts = cpudata?.filter((product) => product.category === "Cpu");
   return (
     <>
-      <Row
-        gutter={{
-          xs: 8,
-          sm: 16,
-          md: 24,
-          lg: 32,
-        }}
-      >
-        <Col className="pb-6" span={6}>
-          <Card
-            hoverable
-            cover={
-              <Image
-                src={CpuImage}
-                width={500}
-                height={200}
-                responsive
-                alt="cpu image"
-              />
-            }
-          >
-            <div
-              className="line"
-              style={{
-                height: "5px",
-
-                background: "#000",
-                width: "100%",
-              }}
-            ></div>
-            <p
-              style={{
-                width: "100%",
-                fontSize: "10px",
-              }}
-            ></p>
-            <h1>CPU</h1>
-
-            <h2>Category</h2>
-
-            <h3>Price</h3>
-            <h3>Status ( In Stock | Out of stock)</h3>
-            <h3>Rating (Out of 5 Stars)</h3>
-
-            {/* <Link href={`/news/${news?.id}`}> */}
-            <p
-              style={{
-                fontSize: "15px",
-                marginTop: "20px",
-                backgroundColor: "black",
-                color: "white",
-                width: "100%",
-                padding: "2px 5px ",
-                fontWeight: "300",
-                letterSpacing: "3px",
-                textAlign: "center",
-              }}
-            >
-              Details <ArrowRightOutlined />
-            </p>
-            {/* </Link> */}
-          </Card>
-        </Col>
-      </Row>
+      <h1>Cpu page</h1>
+      {/* {
+        allProduct?.filter(category=>category === "Cpu")
+      } */}
+      {/* <HomeCard allProduct={allProduct}></HomeCard> */}
+      <CpuCard cpuProducts={cpuProducts}></CpuCard>
     </>
   );
 };
@@ -78,4 +18,16 @@ const CpuPages = () => {
 export default CpuPages;
 CpuPages.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:3000/api/product");
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      cpudata: data.data,
+    },
+    // revalidate: 10,
+  };
 };
