@@ -1,8 +1,6 @@
-import { addToCart } from "@/redux/features/cart/cartSlice";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Button, Card, Col, Row } from "antd";
 import Image from "next/image";
-import Link from "next/link";
 import { useDispatch } from "react-redux";
 
 const HomeCard = ({ allProduct }) => {
@@ -11,7 +9,7 @@ const HomeCard = ({ allProduct }) => {
   return (
     <>
       <Row
-        className="ms-15 "
+        className="pt-10"
         gutter={{
           xs: 8,
           sm: 16,
@@ -20,14 +18,14 @@ const HomeCard = ({ allProduct }) => {
         }}
       >
         {allProduct?.map((product) => (
-          <Col key={product.id} className="" span={6}>
+          <Col key={product.id} className="mb-12" span={6}>
             <Card
               hoverable
               cover={
                 <Image
                   src={product?.image_url}
                   width={500}
-                  height={200}
+                  height={180}
                   responsive
                   alt="cpu image"
                 />
@@ -62,14 +60,6 @@ const HomeCard = ({ allProduct }) => {
               <Button className="me-12">
                 Details <ArrowRightOutlined />
               </Button>
-              <Link href="/pcbuilder">
-                <Button
-                  onClick={() => dispatch(addToCart(product))}
-                  className="btn btn-primary"
-                >
-                  Add
-                </Button>
-              </Link>
 
               {/* </Link> */}
             </Card>

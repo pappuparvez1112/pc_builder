@@ -34,11 +34,8 @@ CpuDetailsPages.getLayout = function getLayout(page) {
 //   // return { paths, fallback: false };
 // };
 
-export const getServerSideProps = async (context) => {
-  const { params } = context;
-  const res = await fetch(
-    `http://localhost:5000/products/${params.cpudetailsId}`
-  );
+export const getServerSideProps = async () => {
+  const res = await fetch(`http://localhost:5000/product/${id}`);
   const data = await res.json();
   return {
     props: {

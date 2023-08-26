@@ -56,10 +56,11 @@ const CpuCard = ({ cpuProducts }) => {
               <h3>Price:{product?.price}</h3>
               <h3>Status: {product?.status}</h3>
               <h3>Rating : {product?.rating}</h3>
+              {/* <h3>Description:{product?.description}</h3> */}
 
               <p style={{ fontSize: "15px" }}></p>
 
-              <Link href={`/cpuDetails/${product?.id}`}>
+              <Link href={`/cpu/${product?._id}`}>
                 <Button className="me-12">
                   Details <ArrowRightOutlined />
                 </Button>

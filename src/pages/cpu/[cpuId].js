@@ -1,12 +1,16 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import CpuCardDetails from "@/components/UI/CpuCardDetails";
+import { useRouter } from "next/router";
 
-const CpuPages = ({ cpuDetail }) => {
-  const cpuDetails = cpuDetail?.filter((product) => product.category === "Cpu");
+const CpuPages = ({ cpuDetails }) => {
+  const router = useRouter();
+  const cpuId = router.query.cpuId;
+  // const cpuDetails = cpu.filter((product) => product.category === "Cpu");
+  // console.log(cpuDetails,"details")
   return (
     <>
       <h1>Cpu details page</h1>
-      <CpuCardDetails cpuDetails={cpuDetails}></CpuCardDetails>
+      <CpuCardDetails cpuDetails={cpuDetails}>{cpuId}</CpuCardDetails>
     </>
   );
 };
@@ -19,28 +23,21 @@ CpuPages.getLayout = function getLayout(page) {
 // export const getStaticPaths = async () => {
 //   const res = await fetch("http://localhost:5000/products");
 //   const data = await res.json();
-//   if (Array.isArray(data)) {
-//     const paths = data.map((cpu) => ({
-//       params: { cpuId: cpu.id.toString() },
-//     }));
-//     return { paths: [], fallback: false };
-//   } else {
-//     console.log("error happende");
-//   }
 
-//   // const paths = data?.map((cpu) => ({
-//   //   params: { cpuId: cpu.id.toString() },
-//   // }));
-//   // return { paths, fallback: false };
+//   const paths = data?.map((product) => ({
+//     params: { cpuId: product.id.toString() },
+//   }));
+//   return { paths, fallback: false };
 // };
 
-export const getServerSideProps = async (context) => {
+export async function getServerSideProps(context) {
   const { params } = context;
-  const res = await fetch(`http://localhost:5000/products/${params.cpuId}`);
+  const res = await fetch(`http://localhost:5000/products/${params?.cpuId}`);
   const data = await res.json();
+  console.log(data);
   return {
     props: {
-      cpuDetail: data,
+      cpuDetails: data,
     },
   };
-};
+}

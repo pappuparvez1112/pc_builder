@@ -1,83 +1,35 @@
-import CpuImage from "@/assets/images/images.jpg";
 import RootLayout from "@/components/Layouts/RootLayout";
-import { ArrowRightOutlined } from "@ant-design/icons";
-import { Card, Col, Row } from "antd";
-import Image from "next/image";
+import MonitorCardDetails from "@/components/UI/MonitorCardDetails";
+import { useRouter } from "next/router";
 
-const CpuPages = () => {
+const MonitorPages = ({ monitorProduct }) => {
+  const router = useRouter();
+  const monitorId = router.query.monitorId;
   return (
     <>
-      <Row
-        className="ms-15 "
-        gutter={{
-          xs: 8,
-          sm: 16,
-          md: 24,
-          lg: 32,
-        }}
-      >
-        <Col className="pb-6" span={6}>
-          <Card
-            hoverable
-            cover={
-              <Image
-                src={CpuImage}
-                width={500}
-                height={200}
-                responsive
-                alt="cpu image"
-              />
-            }
-          >
-            <div
-              className="line"
-              style={{
-                height: "5px",
-
-                background: "#000",
-                width: "100%",
-              }}
-            ></div>
-            <p
-              style={{
-                width: "100%",
-                fontSize: "10px",
-              }}
-            ></p>
-            <h1>CPU</h1>
-
-            <h2>Category</h2>
-
-            <h3>Price</h3>
-            <h3>Status ( In Stock | Out of stock)</h3>
-            <h3>Rating (Out of 5 Stars)</h3>
-
-            <p style={{ fontSize: "15px" }}></p>
-            {/* <Link href={`/news/${news?.id}`}> */}
-            <p
-              style={{
-                fontSize: "15px",
-                marginTop: "20px",
-                backgroundColor: "black",
-                color: "white",
-                width: "100%",
-                padding: "2px 5px ",
-                fontWeight: "300",
-                letterSpacing: "3px",
-                textAlign: "center",
-              }}
-            >
-              Details <ArrowRightOutlined />
-            </p>
-            {/* </Link> */}
-          </Card>
-        </Col>
-      </Row>
+      <h1>Cpu details page</h1>
+      <MonitorCardDetails monitorProduct={monitorProduct}>
+        {monitorId}
+      </MonitorCardDetails>
     </>
   );
 };
 
-export default CpuPages;
-CpuPages.getLayout = function getLayout(page) {
+export default MonitorPages;
+MonitorPages.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
+
+export async function getServerSideProps(context) {
+  const { params } = context;
+  const res = await fetch(
+    `http://localhost:5000/products/${params?.monitorId}`
+  );
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      monitorProduct: data,
+    },
+  };
+}

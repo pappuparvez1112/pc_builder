@@ -12,11 +12,10 @@ import {
 import { Button, Layout, Menu } from "antd";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import Category from "../UI/Category";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const RootLayout = ({ children }) => {
+const LoginLayout = ({ children }) => {
   const { data: session } = useSession();
   console.log(session, "from header");
 
@@ -57,7 +56,7 @@ const RootLayout = ({ children }) => {
             </Button>
           </Link>
           {session?.user ? (
-            <items className="hover:bg-slate-300  bg-gray-500">
+            <items>
               <Button
                 onClick={() =>
                   signOut({
@@ -71,16 +70,17 @@ const RootLayout = ({ children }) => {
               </Button>
             </items>
           ) : (
-            <Link href="/login">
-              <Button type="primary">login</Button>
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              href="/login"
+            >
+              <items>Login</items>
             </Link>
           )}
         </Menu>
       </Header>
 
       <div className=" grid grid-cols-7">
-        <Category></Category>
-
         <Content
           className="col-span-6"
           style={{
@@ -124,7 +124,7 @@ const RootLayout = ({ children }) => {
     </Layout>
   );
 };
-export default RootLayout;
+export default LoginLayout;
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/products");

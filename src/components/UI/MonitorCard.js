@@ -58,10 +58,12 @@ const MonitorCard = ({ monitorProducts }) => {
               <h3>Rating : {product?.rating}</h3>
 
               <p style={{ fontSize: "15px" }}></p>
+              <Link href={`/monitor/${product?._id}`}>
+                <Button className="me-12">
+                  Details <ArrowRightOutlined />
+                </Button>
+              </Link>
 
-              <Button className="me-12">
-                Details <ArrowRightOutlined />
-              </Button>
               <Link href="/pcbuilder">
                 <Button
                   onClick={() => dispatch(addToCart(product))}

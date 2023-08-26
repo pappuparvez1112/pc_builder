@@ -59,9 +59,12 @@ const RamCard = ({ ramProducts }) => {
 
               <p style={{ fontSize: "15px" }}></p>
 
-              <Button className="me-12">
-                Details <ArrowRightOutlined />
-              </Button>
+              <Link href={`/ram/${product?._id}`}>
+                <Button className="me-12">
+                  Details <ArrowRightOutlined />
+                </Button>
+              </Link>
+
               <Link href="/pcbuilder">
                 <Button
                   onClick={() => dispatch(addToCart(product))}

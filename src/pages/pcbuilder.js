@@ -35,11 +35,15 @@ const PcBuilderPage = () => {
                     CPU
                   </td>
                 </tr>
-                <Link href="/cpu">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
-                    ADD_TO_BUILD
-                  </button>
-                </Link>
+                <tr>
+                  <td>
+                    <Link href="/cpu">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
+                        ADD_TO_BUILD
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -51,11 +55,15 @@ const PcBuilderPage = () => {
                     Motherboard
                   </td>
                 </tr>
-                <Link href="/motherboard">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
-                    ADD_TO_BUILD
-                  </button>
-                </Link>
+                <tr>
+                  <td>
+                    <Link href="/motherboard">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
+                        ADD_TO_BUILD
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -67,11 +75,15 @@ const PcBuilderPage = () => {
                     Ram
                   </td>
                 </tr>
-                <Link href="/ram">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
-                    ADD_TO_BUILD
-                  </button>
-                </Link>
+                <tr>
+                  <td>
+                    <Link href="/ram">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
+                        ADD_TO_BUILD
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -83,11 +95,15 @@ const PcBuilderPage = () => {
                     Power Supply
                   </td>
                 </tr>
-                <Link href="/powersupply">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
-                    ADD_TO_BUILD
-                  </button>
-                </Link>
+                <tr>
+                  <td>
+                    <Link href="/powersupply">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
+                        ADD_TO_BUILD
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -99,11 +115,15 @@ const PcBuilderPage = () => {
                     Storage Device
                   </td>
                 </tr>
-                <Link href="/storageDevice">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
-                    ADD_TO_BUILD
-                  </button>
-                </Link>
+                <tr>
+                  <td>
+                    <Link href="/storageDevice">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
+                        ADD_TO_BUILD
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -115,11 +135,15 @@ const PcBuilderPage = () => {
                     Monitor
                   </td>
                 </tr>
-                <Link href="/nonitor">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
-                    ADD_TO_BUILD
-                  </button>
-                </Link>
+                <tr>
+                  <td>
+                    <Link href="/nonitor">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
+                        ADD_TO_BUILD
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -131,11 +155,15 @@ const PcBuilderPage = () => {
                     Mouse
                   </td>
                 </tr>
-                <Link href="/mouse">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
-                    ADD_TO_BUILD
-                  </button>
-                </Link>
+                <tr>
+                  <td>
+                    <Link href="/mouse">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
+                        ADD_TO_BUILD
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

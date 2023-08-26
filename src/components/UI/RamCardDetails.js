@@ -1,7 +1,7 @@
 import { Card, Col, Row } from "antd";
 import Image from "next/image";
 
-const CpuCardDetails = ({ cpuDetails: product }) => {
+const RamCardDetails = ({ ramDetails: product }) => {
   return (
     <>
       <h1>details</h1>
@@ -61,4 +61,4 @@ const CpuCardDetails = ({ cpuDetails: product }) => {
     </>
   );
 };
-export default CpuCardDetails;
+export default RamCardDetails;

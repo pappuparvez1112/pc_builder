@@ -1,20 +1,19 @@
 import RootLayout from "@/components/Layouts/RootLayout";
-import RamCard from "@/components/UI/RamCard";
+import CpuCard from "@/components/UI/CpuCard";
 
-const RamPages = ({ ramProduct }) => {
-  const ramProducts = ramProduct?.filter(
-    (product) => product.category === "Ram"
-  );
+const CpuPages = ({ cpudata }) => {
+  const cpuProducts = cpudata?.filter((product) => product.category === "Cpu");
   return (
     <>
-      <h1>Ram page</h1>
-      <RamCard ramProducts={ramProducts}></RamCard>
+      <h1>Cpu page</h1>
+
+      <CpuCard cpuProducts={cpuProducts}></CpuCard>
     </>
   );
 };
 
-export default RamPages;
-RamPages.getLayout = function getLayout(page) {
+export default CpuPages;
+CpuPages.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
@@ -24,7 +23,7 @@ export const getStaticProps = async () => {
   console.log(data);
   return {
     props: {
-      ramProduct: data.data,
+      cpudata: data.data,
     },
     // revalidate: 10,
   };
