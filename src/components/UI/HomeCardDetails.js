@@ -1,7 +1,7 @@
 import { Card, Col, Row } from "antd";
 import Image from "next/image";
 
-const RamCardDetails = ({ ramDetails: product }) => {
+const HomeCardDetails = ({ pagesDetails: product }) => {
   return (
     <>
       <Row
@@ -47,9 +47,9 @@ const RamCardDetails = ({ ramDetails: product }) => {
             <h2>{product?.category}</h2>
 
             <h3>{product?.price}</h3>
-            <h3> {product?.status}</h3>
-            <h3>Rating : {product?.rating}</h3>
-            <h3>Description:{product?.description}</h3>
+            <h3>{product?.status}</h3>
+            <h3> Ratings : {product?.rating}</h3>
+            <h3>{product?.description}</h3>
 
             <p style={{ fontSize: "15px" }}></p>
 
@@ -60,4 +60,4 @@ const RamCardDetails = ({ ramDetails: product }) => {
     </>
   );
 };
-export default RamCardDetails;
+export default HomeCardDetails;

@@ -7,7 +7,7 @@ const PowerSupplyPages = ({ powersupplyProduct }) => {
   );
   return (
     <>
-      <h1>Monitor page</h1>
+      <h1>Power supply page</h1>
       <PowerSupplyCard
         powersupplyProducts={powersupplyProducts}
       ></PowerSupplyCard>
@@ -21,7 +21,9 @@ PowerSupplyPages.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch(
+    "https://technet-server-pappuparvez1112.vercel.app/products"
+  );
   const data = await res.json();
   console.log(data);
   return {

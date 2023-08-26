@@ -49,13 +49,13 @@ const CpuCard = ({ cpuProducts }) => {
                 }}
               ></p>
 
-              <h1>name:{product?.name}</h1>
+              <h1>{product?.name}</h1>
 
-              <h2>Category:{product?.category}</h2>
+              <h2>{product?.category}</h2>
 
-              <h3>Price:{product?.price}</h3>
-              <h3>Status: {product?.status}</h3>
-              <h3>Rating : {product?.rating}</h3>
+              <h3>{product?.price}</h3>
+              <h3>{product?.status}</h3>
+              <h3> Rating : {product?.rating}</h3>
               {/* <h3>Description:{product?.description}</h3> */}
 
               <p style={{ fontSize: "15px" }}></p>

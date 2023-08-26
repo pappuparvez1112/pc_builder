@@ -4,7 +4,6 @@ import Image from "next/image";
 const MonitorCardDetails = ({ monitorProduct: product }) => {
   return (
     <>
-      <h1>details</h1>
       <Row
         className="ms-15 "
         gutter={{
@@ -43,14 +42,14 @@ const MonitorCardDetails = ({ monitorProduct: product }) => {
               }}
             ></p>
 
-            <h1>name:{product?.name}</h1>
+            <h1>{product?.name}</h1>
 
-            <h2>Category:{product?.category}</h2>
+            <h2>{product?.category}</h2>
 
-            <h3>Price:{product?.price}</h3>
-            <h3>Status: {product?.status}</h3>
+            <h3>{product?.price}</h3>
+            <h3>{product?.status}</h3>
             <h3>Rating : {product?.rating}</h3>
-            <h3>Description:{product?.description}</h3>
+            <h3>{product?.description}</h3>
 
             <p style={{ fontSize: "15px" }}></p>
 

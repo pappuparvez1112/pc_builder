@@ -7,7 +7,7 @@ const StoragePages = ({ storageDeviceProduct }) => {
   );
   return (
     <>
-      <h1>Ram page</h1>
+      <h1>Storage device</h1>
       <StorageDeviceCard
         storageDeviceProducts={storageDeviceProducts}
       ></StorageDeviceCard>
@@ -20,7 +20,9 @@ StoragePages.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch(
+    "https://technet-server-pappuparvez1112.vercel.app/products"
+  );
   const data = await res.json();
   console.log(data);
   return {

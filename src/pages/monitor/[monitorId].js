@@ -7,7 +7,7 @@ const MonitorPages = ({ monitorProduct }) => {
   const monitorId = router.query.monitorId;
   return (
     <>
-      <h1>Cpu details page</h1>
+      <h1>Monitor details page</h1>
       <MonitorCardDetails monitorProduct={monitorProduct}>
         {monitorId}
       </MonitorCardDetails>
@@ -23,7 +23,7 @@ MonitorPages.getLayout = function getLayout(page) {
 export async function getServerSideProps(context) {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/products/${params?.monitorId}`
+    `https://technet-server-pappuparvez1112.vercel.app/products/${params?.monitorId}`
   );
   const data = await res.json();
   console.log(data);

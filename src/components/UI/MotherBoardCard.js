@@ -49,19 +49,21 @@ const MotherBoardCard = ({ motherboardProducts }) => {
                 }}
               ></p>
 
-              <h1>name:{product?.name}</h1>
+              <h1>{product?.name}</h1>
 
-              <h2>Category:{product?.category}</h2>
+              <h2>{product?.category}</h2>
 
-              <h3>Price:{product?.price}</h3>
-              <h3>Status: {product?.status}</h3>
+              <h3>{product?.price}</h3>
+              <h3>{product?.status}</h3>
               <h3>Rating : {product?.rating}</h3>
 
               <p style={{ fontSize: "15px" }}></p>
 
-              <Button className="me-12">
-                Details <ArrowRightOutlined />
-              </Button>
+              <Link href={`/motherboard/${product?._id}`}>
+                <Button className="me-12">
+                  Details <ArrowRightOutlined />
+                </Button>
+              </Link>
               <Link href="/pcbuilder">
                 <Button
                   onClick={() => dispatch(addToCart(product))}

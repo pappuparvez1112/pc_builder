@@ -17,7 +17,7 @@ CpuDetailsPages.getLayout = function getLayout(page) {
 };
 
 // export const getStaticPaths = async () => {
-//   const res = await fetch("http://localhost:5000/products");
+//   const res = await fetch("https://technet-server-pappuparvez1112.vercel.app/products");
 //   const data = await res.json();
 //   if (Array.isArray(data)) {
 //     const paths = data.map((cpu) => ({
@@ -35,7 +35,9 @@ CpuDetailsPages.getLayout = function getLayout(page) {
 // };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`http://localhost:5000/product/${id}`);
+  const res = await fetch(
+    `https://technet-server-pappuparvez1112.vercel.app/product/${id}`
+  );
   const data = await res.json();
   return {
     props: {

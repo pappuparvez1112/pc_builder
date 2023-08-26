@@ -1,5 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
-import MouseCard from "@/components/UI/RamCard copy";
+import MouseCard from "@/components/UI/MouseCard";
 
 const MousePages = ({ mouseProduct }) => {
   const mouseProducts = mouseProduct?.filter(
@@ -7,7 +7,7 @@ const MousePages = ({ mouseProduct }) => {
   );
   return (
     <>
-      <h1>Ram page</h1>
+      <h1>Mouse page</h1>
       <MouseCard mouseProducts={mouseProducts}></MouseCard>
     </>
   );
@@ -18,7 +18,9 @@ MousePages.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch(
+    "https://technet-server-pappuparvez1112.vercel.app/products"
+  );
   const data = await res.json();
   console.log(data);
   return {

@@ -1,5 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
-import MotherBoardCard from "@/components/UI/MotherBoard";
+import MotherBoardCard from "@/components/UI/MotherBoardCard";
 
 const MotherBoardPages = ({ motherboardProduct }) => {
   const motherboardProducts = motherboardProduct?.filter(
@@ -7,7 +7,7 @@ const MotherBoardPages = ({ motherboardProduct }) => {
   );
   return (
     <>
-      <h1>Monitor page</h1>
+      <h1>MotherBoard page</h1>
       <MotherBoardCard
         motherboardProducts={motherboardProducts}
       ></MotherBoardCard>
@@ -20,7 +20,9 @@ MotherBoardPages.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch(
+    "https://technet-server-pappuparvez1112.vercel.app/products"
+  );
   const data = await res.json();
   console.log(data);
   return {

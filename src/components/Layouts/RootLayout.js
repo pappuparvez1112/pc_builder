@@ -127,7 +127,9 @@ const RootLayout = ({ children }) => {
 export default RootLayout;
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch(
+    "https://technet-server-pappuparvez1112.vercel.app/products"
+  );
   const data = await res.json();
   console.log(data);
   return {
