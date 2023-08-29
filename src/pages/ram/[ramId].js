@@ -9,8 +9,9 @@ const RamPages = ({ ramDetails }) => {
   // console.log(cpuDetails,"details")
   return (
     <>
-      <h1>Ram details page</h1>
-      <RamCardDetails ramDetails={ramDetails}>{ramId}</RamCardDetails>
+      <div className="mt-11">
+        <RamCardDetails ramDetails={ramDetails}>{ramId}</RamCardDetails>
+      </div>
     </>
   );
 };

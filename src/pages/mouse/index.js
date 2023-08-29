@@ -7,8 +7,9 @@ const MousePages = ({ mouseProduct }) => {
   );
   return (
     <>
-      <h1>Mouse page</h1>
-      <MouseCard mouseProducts={mouseProducts}></MouseCard>
+      <div className="mt-11">
+        <MouseCard mouseProducts={mouseProducts}></MouseCard>
+      </div>
     </>
   );
 };

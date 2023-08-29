@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const PcBuilderPage = () => {
   const products = useSelector((state) => state.cart.products);
   console.log(products, "filtered by rdeux cart");
+
   const handleAddProduct = () => {
     toast.success("🦄Build Successfully Complete!", {
       position: "top-right",
@@ -137,7 +138,7 @@ const PcBuilderPage = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Link href="/nonitor">
+                    <Link href="/monitor">
                       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center">
                         ADD_TO_BUILD
                       </button>
@@ -170,7 +171,7 @@ const PcBuilderPage = () => {
         </div>
 
         <div className="max-w-lg w-full">
-          <h1 className="mb-2">Pc Components</h1>
+          <h1 className="text-center">Pc Components</h1>
           <div className="bg-slate-400 border border-orange-600 rounded-md h-[60vh] p-10 flex flex-col">
             <div className="flex-grow  mb-2 space-y-2 overflow-auto">
               {products.map((product) => (
@@ -190,13 +191,21 @@ const PcBuilderPage = () => {
                       <p>Category: {product?.category}</p>
                     </div>
                   </div>
+                  {/* <Button onClick={handleAddProduct} className="w-full">
+                    Complete Build
+                  </Button> */}
                 </div>
               ))}
             </div>
+
             <div className="space-y-2">
-              <Button onClick={handleAddProduct} className="w-full">
-                Complete Build
-              </Button>
+              {products.length >= 5 ? (
+                <Button onClick={handleAddProduct} className="w-full">
+                  Complete Building
+                </Button>
+              ) : (
+                <Button className="w-full">Build loading</Button>
+              )}
             </div>
           </div>
         </div>

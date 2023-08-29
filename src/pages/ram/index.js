@@ -7,8 +7,9 @@ const RamPages = ({ ramProduct }) => {
   );
   return (
     <>
-      <h1>Ram page</h1>
-      <RamCard ramProducts={ramProducts}></RamCard>
+      <div className="mt-11">
+        <RamCard ramProducts={ramProducts}></RamCard>
+      </div>
     </>
   );
 };

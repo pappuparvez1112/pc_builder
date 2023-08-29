@@ -7,8 +7,9 @@ const MonitorPages = ({ monitorProduct }) => {
   );
   return (
     <>
-      <h1>Monitor page</h1>
-      <MonitorCard monitorProducts={monitorProducts}></MonitorCard>
+      <div className="mt-11">
+        <MonitorCard monitorProducts={monitorProducts}></MonitorCard>
+      </div>
     </>
   );
 };

@@ -7,10 +7,11 @@ const MotherBoardPages = ({ motherboardDetails }) => {
   const motherboardId = router.query.motherboardId;
   return (
     <>
-      <h1>MotherBoard details page</h1>
-      <MotherBoardCardDetails motherboardDetails={motherboardDetails}>
-        {motherboardId}
-      </MotherBoardCardDetails>
+      <div className="mt-11">
+        <MotherBoardCardDetails motherboardDetails={motherboardDetails}>
+          {motherboardId}
+        </MotherBoardCardDetails>
+      </div>
     </>
   );
 };

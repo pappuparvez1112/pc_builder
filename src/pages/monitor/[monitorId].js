@@ -7,10 +7,11 @@ const MonitorPages = ({ monitorProduct }) => {
   const monitorId = router.query.monitorId;
   return (
     <>
-      <h1>Monitor details page</h1>
-      <MonitorCardDetails monitorProduct={monitorProduct}>
-        {monitorId}
-      </MonitorCardDetails>
+      <div className="mt-11">
+        <MonitorCardDetails monitorProduct={monitorProduct}>
+          {monitorId}
+        </MonitorCardDetails>
+      </div>
     </>
   );
 };

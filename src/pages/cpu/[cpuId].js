@@ -9,8 +9,9 @@ const CpuPages = ({ cpuDetails }) => {
   // console.log(cpuDetails,"details")
   return (
     <>
-      <h1>Cpu details page</h1>
-      <CpuCardDetails cpuDetails={cpuDetails}>{cpuId}</CpuCardDetails>
+      <div className="mt-11">
+        <CpuCardDetails cpuDetails={cpuDetails}>{cpuId}</CpuCardDetails>
+      </div>
     </>
   );
 };

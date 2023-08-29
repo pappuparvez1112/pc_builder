@@ -5,7 +5,7 @@ const CpuPages = ({ cpudata }) => {
   const cpuProducts = cpudata?.filter((product) => product.category === "Cpu");
   return (
     <>
-      <h1>Cpu page</h1>
+      {/* <h1>Cpu page</h1> */}
       {/* {
         allProduct?.filter(category=>category === "Cpu")
       } */}

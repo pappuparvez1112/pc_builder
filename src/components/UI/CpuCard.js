@@ -11,7 +11,7 @@ const CpuCard = ({ cpuProducts }) => {
   return (
     <>
       <Row
-        className="ms-15 "
+        className="mt-12"
         gutter={{
           xs: 8,
           sm: 16,

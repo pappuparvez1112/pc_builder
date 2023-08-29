@@ -78,11 +78,11 @@ const RootLayout = ({ children }) => {
         </Menu>
       </Header>
 
-      <div className=" grid grid-cols-7">
+      <div className=" grid grid-cols-7 pt-4 flex-auto">
         <Category></Category>
 
         <Content
-          className="col-span-6"
+          className="col-span-6 ms-24 "
           style={{
             padding: "0 24px",
             minHeight: "100vh",

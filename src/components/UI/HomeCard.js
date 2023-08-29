@@ -10,7 +10,7 @@ const HomeCard = ({ allProduct }) => {
   return (
     <>
       <Row
-        className="pt-10"
+        className="pt-11"
         gutter={{
           xs: 8,
           sm: 16,

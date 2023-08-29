@@ -71,6 +71,7 @@ const LoginLayout = ({ children }) => {
             </items>
           ) : (
             <Link
+              className="ms-6"
               style={{ textDecoration: "none", color: "white" }}
               href="/login"
             >

@@ -7,10 +7,11 @@ const MotherBoardPages = ({ motherboardProduct }) => {
   );
   return (
     <>
-      <h1>MotherBoard page</h1>
-      <MotherBoardCard
-        motherboardProducts={motherboardProducts}
-      ></MotherBoardCard>
+      <div className="mt-11">
+        <MotherBoardCard
+          motherboardProducts={motherboardProducts}
+        ></MotherBoardCard>
+      </div>
     </>
   );
 };

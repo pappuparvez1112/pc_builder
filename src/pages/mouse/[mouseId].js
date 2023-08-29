@@ -7,8 +7,11 @@ const MousePages = ({ mouseProduct }) => {
   const mouseId = router.query.mouseId;
   return (
     <>
-      <h1>Mouse details page</h1>
-      <MouseCardDetails mouseProduct={mouseProduct}>{mouseId}</MouseCardDetails>
+      <div className="mt-11">
+        <MouseCardDetails mouseProduct={mouseProduct}>
+          {mouseId}
+        </MouseCardDetails>
+      </div>
     </>
   );
 };

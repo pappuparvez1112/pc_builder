@@ -7,10 +7,11 @@ const StoragePages = ({ storageDeviceProduct }) => {
   );
   return (
     <>
-      <h1>Storage device</h1>
-      <StorageDeviceCard
-        storageDeviceProducts={storageDeviceProducts}
-      ></StorageDeviceCard>
+      <div className="mt-11">
+        <StorageDeviceCard
+          storageDeviceProducts={storageDeviceProducts}
+        ></StorageDeviceCard>
+      </div>
     </>
   );
 };

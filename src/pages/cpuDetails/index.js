@@ -5,7 +5,6 @@ const CpuDetailsPages = ({ cpuDetail }) => {
   const cpuDetails = cpuDetail?.filter((product) => product.category === "Cpu");
   return (
     <>
-      <h1>Cpu details page</h1>
       <CpuCardDetails cpuDetails={cpuDetails}></CpuCardDetails>
     </>
   );

@@ -7,10 +7,11 @@ const PowersupplyPages = ({ PowersupplyProduct }) => {
   const powersupplyId = router.query.powersupplyId;
   return (
     <>
-      <h1>Power Supply Details page</h1>
-      <PowerSupplyCardDetails PowersupplyProduct={PowersupplyProduct}>
-        {powersupplyId}
-      </PowerSupplyCardDetails>
+      <div className="mt-11">
+        <PowerSupplyCardDetails PowersupplyProduct={PowersupplyProduct}>
+          {powersupplyId}
+        </PowerSupplyCardDetails>
+      </div>
     </>
   );
 };

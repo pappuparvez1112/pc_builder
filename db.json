@@ -2,12 +2,14 @@
   "news": [
     {
       "id": 1,
-      "title": "New Study Reveals Benefits of Regular Exercise",
-      "description": "A recent study conducted by experts in the field suggests that regular exercise can have numerous health benefits, including improved cardiovascular function and increased mental well-being.",
-      "author": "Healthline",
-      "release_date": "June 10, 2023",
-      "category": "Health",
-      "comment_count": 30,
+      "name": "Intel",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, atque expedita. Quam rem eligendi omnis quasi quidem necessitatibus perferendis animi?",
+      "category": "Cpu",
+      "status": "stock",
+      "reviews": "Good",
+      "price": "40000",
+      "features": "Acer",
+      "rating": "5",
       "image_url": "/images/exercise_image.jpg"
     },
     {

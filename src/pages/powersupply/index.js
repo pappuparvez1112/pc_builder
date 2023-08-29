@@ -7,10 +7,11 @@ const PowerSupplyPages = ({ powersupplyProduct }) => {
   );
   return (
     <>
-      <h1>Power supply page</h1>
-      <PowerSupplyCard
-        powersupplyProducts={powersupplyProducts}
-      ></PowerSupplyCard>
+      <div className="mt-11">
+        <PowerSupplyCard
+          powersupplyProducts={powersupplyProducts}
+        ></PowerSupplyCard>
+      </div>
     </>
   );
 };

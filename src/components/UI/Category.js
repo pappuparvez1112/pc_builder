@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Dropdown from "./Dropdown";
 
 // const sidebarOptions = [
 //   {
@@ -34,7 +35,7 @@ import Link from "next/link";
 const Category = () => {
   return (
     <>
-      <div className=" bg-white">
+      {/* <div className=" bg-white">
         <div class="relative inline-block text-left ms-14 mt-8">
           <div>
             <button
@@ -128,7 +129,51 @@ const Category = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Dropdown buttonText="Categories">
+        <Link
+          href="/cpu"
+          className="block px-4 ms-4 py-2 text-sm text-gray-900 hover:bg-orange-300"
+        >
+          Cpu
+        </Link>
+        <Link
+          href="/ram"
+          className="block px-4 ms-4 py-2 text-sm  text-gray-900 hover:bg-orange-300"
+        >
+          Ram
+        </Link>
+        <Link
+          href="/monitor"
+          className="block px-4 ms-4 py-2 text-sm  text-gray-900 hover:bg-orange-300"
+        >
+          Monitor
+        </Link>
+        <Link
+          href="/motherboard"
+          className="block px-4 ms-4 py-2 text-sm  text-gray-900 hover:bg-orange-300"
+        >
+          MotherBoard
+        </Link>
+        <Link
+          href="/storageDevice"
+          className="block px-4 ms-4 py-2 text-sm  text-gray-900 hover:bg-orange-300"
+        >
+          Storage Device
+        </Link>
+        <Link
+          href="/powersupply"
+          className="block px-4 ms-4 py-2 text-sm  text-gray-900 hover:bg-orange-300"
+        >
+          PowerSupply
+        </Link>
+        <Link
+          href="/mouse"
+          className="block px-4 ms-4 py-2 text-sm  text-gray-900 hover:bg-orange-300"
+        >
+          Mouse
+        </Link>
+      </Dropdown>
     </>
   );
 };
