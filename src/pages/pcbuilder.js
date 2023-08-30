@@ -200,7 +200,10 @@ const PcBuilderPage = () => {
 
             <div className="space-y-2">
               {products.length >= 5 ? (
-                <Button onClick={handleAddProduct} className="w-full">
+                <Button
+                  onClick={handleAddProduct}
+                  className="w-full bg-orange-300"
+                >
                   Complete Building
                 </Button>
               ) : (
