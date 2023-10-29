@@ -1,7 +1,6 @@
 import LoginLayout from "@/components/Layouts/LoginLayout";
 import styles from "@/styles/Login.module.css";
 import { GithubOutlined, GoogleOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import { signIn } from "next-auth/react";
 import Head from "next/head";
 const LoginPage = () => {
@@ -29,13 +28,13 @@ const LoginPage = () => {
           />
         </div>
         <hr />
-        <form>
+        {/* <form>
           <label htmlFor="">Your Email</label>
           <input type="email" />
           <label htmlFor="">Your Password</label>
           <input type="password" />
           <Button>Login</Button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
